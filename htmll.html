@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asci Values</title>
+    <link rel="stylesheet"href="style.css">
+</head>
+<body>
+    <div class ="container">
+    <form id=""asciiform>
+        <input type="text" id="alphabetInput" maxlength="1" pattern="[A-Za-z]" required>
+    </form>
+</div>
+    <div class = "msg">value</div>
+    <script>
+        const alphabetInput = document.querySelector("#alphabetInput");
+        alphabetInput.addEventListener('input', function(){
+            const inputVal = this.value;
+            if(inputVal){
+         const asciiValue = inputVal.charCodeAt(0);
+         document.querySelector('.msg').innerText = `${asciiValue}`;
+            }
+            else{
+                document.querySelector('.msg').innerText = "type to get result";
+            }
+        })
+    </script>
+</body>
+</html>
